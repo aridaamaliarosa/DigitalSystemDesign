@@ -41,6 +41,16 @@ module alu(op,in1, in2, result, clk);
 		begin 
 			hasil <= in1 ^ in2;
 		end 
+
+		else if (op == 8'b00010011)//RSHIFT
+		begin
+			hasil <= {1'b0, in1[7:1]};
+		end
+
+		else if (op == 8'b00010100)//LSHIFT
+		begin
+			hasil <= {in1[6:0], 1'b0};
+		end
 		//slesai
 	end
 	
